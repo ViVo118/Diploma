@@ -1,0 +1,20 @@
+.header {
+    height: 160px;
+    position: relative;
+    margin-bottom: 135px;
+  }
+  
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .header::after{
+    content: url('/img/top_decoration.png');
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}

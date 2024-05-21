@@ -1,4 +1,21 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+// next.config.mjs
 
-export default nextConfig;
+const config = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'millor-shop.ru',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+    loader: 'default',
+  },
+};
+
+export default config;
+
+  
+

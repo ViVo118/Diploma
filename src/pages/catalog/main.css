@@ -1,0 +1,11 @@
+.products{
+    height: 100vh;
+}
+
+.header::after{
+    visibility: hidden;
+}
+
+.products::before{
+    visibility: hidden;
+}

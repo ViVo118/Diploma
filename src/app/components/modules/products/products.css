@@ -1,0 +1,15 @@
+.products{
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.products::before{
+    content: url('/img/left_decoration.png');
+    position: absolute;
+    top: 0;
+    left: -50px;
+}
+
+.products__title{
+    margin-bottom: 95px;
+}

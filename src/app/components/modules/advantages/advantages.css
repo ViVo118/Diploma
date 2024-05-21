@@ -1,0 +1,32 @@
+.advantages {
+    position: relative;
+    background-color: #FFF7E1;
+}
+.advantages__wrapper {
+    margin-bottom: 300px;
+}
+.advantages__decor_top img,
+.advantages__decor_bot img {
+    width: 100%;
+    height: auto;
+}
+.advantages__decor_top{
+    display: flex;
+    align-items: flex-end;
+}
+.advantages__content {
+    display: flex;
+    gap:125px;
+    align-items: center;
+}
+.advantages__title{
+    margin-bottom: 80px;
+}
+.advantages__btn{
+    position: absolute;
+    top: 115%;
+    left: 74%;
+    font-family: Gilroy__Bold;
+    font-size: 30px;
+    padding: 20px 50px;
+}

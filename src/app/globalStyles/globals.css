@@ -1,0 +1,58 @@
+@font-face {
+  font-family: Gilroy_Medium;
+  src: url('/fonts/Gilroy-Medium.woff');
+}
+@font-face {
+  font-family: Gilroy_Black;
+  src: url('/fonts/Gilroy-Black.woff');
+}
+
+@font-face {
+  font-family: Gilroy__Black;
+  src: url('/fonts/Gilroy-Black.woff');
+}
+
+@font-face {
+  font-family: Gilroy__Bold;
+  src: url('/fonts/Gilroy-Bold.woff');
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+}
+body {
+  background-color: #FFF;
+  font-family: Gilroy_Medium; 
+  color: #000;
+  font-size: 25px;
+  font-style: normal;
+  line-height: normal;
+}
+a, img {
+  border: 0;
+  outline: 0;
+}
+ul, ol {
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Gilroy_Black;
+}
+h1{
+  font-size: 80px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 85px;
+}
+h2{
+  font-size: 50px;
+}

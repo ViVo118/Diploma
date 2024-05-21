@@ -1,0 +1,25 @@
+.poster{
+    margin-bottom: 275px;
+}
+.poster__content{
+    position: relative;
+}
+.poster__image{
+    position: absolute;
+    top: 97px;
+    right: 212px;
+}
+.poster__text{
+    margin-bottom: 45px;
+    word-wrap: break-word;
+}
+.poster__text + .poster__text{
+    margin-bottom: 90px;
+}
+.poster__btn{
+    font-size: 30px;
+    padding: 20px 50px;
+}
+.second__line{
+    display: block;
+}

@@ -1,0 +1,34 @@
+.list__item{
+    display: flex;
+    gap: 50px;
+}
+.list__text{
+    margin-bottom: 50px;
+}
+.list__title{
+    font-size: 30px;
+    font-family: Gilroy__Bold;
+    margin-bottom: 25px;
+}
+.list__img{
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background-size: 30px 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #F9B300;
+    flex-shrink: 0;
+}
+
+.list__item:nth-child(1) .list__img{
+    background-image: url('/img/adv_1.svg');;
+}
+
+.list__item:nth-child(2) .list__img{
+    background-image: url('/img/adv_2.svg');
+}
+
+.list__item:nth-child(3) .list__img{
+    background-image: url('/img/adv_3.svg');
+}
