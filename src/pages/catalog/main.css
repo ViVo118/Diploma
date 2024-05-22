@@ -1,5 +1,5 @@
-.products{
-    height: 100vh;
+.header{
+    margin-bottom: 40px;
 }
 
 .header::after{

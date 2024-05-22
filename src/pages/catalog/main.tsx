@@ -1,13 +1,21 @@
+'use client'
 import Products from "@/app/components/modules/products/products"
 import LayoutComponent from "@/app/components/modules/layout/layout"
+import Sales from "@/app/components/modules/sales/sales"
+import { Provider } from "react-redux"
+import { store } from "@/app/redux/store"
 import '@/app/globalStyles/globals.css'
 import './main.css'
 
+
 const GeneralCatalog = () => {
     return (
-        <LayoutComponent>
-            <Products/>
-        </LayoutComponent>
+        <Provider store={store}>
+            <LayoutComponent>
+                <Products/>
+                <Sales/>
+            </LayoutComponent>
+        </Provider>
     )
 }
 

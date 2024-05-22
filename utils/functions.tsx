@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { NavigationItem, ProductCardItem, ListItem, CardSaleProps } from "@/app/types/types";
+import { NavigationItem, ProductCardItem, ListItem, CoffeeCatalogCardProps } from "@/app/types/types";
 import Image from "next/image";
 import { DECORATIVE_IMG_URL } from "@/app/constants/componentsConsts/componentsConsts";
 
@@ -19,7 +19,7 @@ export function doMapForProductCards(product: ProductCardItem[]) {
                     {item.img}
                 </div>
                 <p className="product__card-title">{item.title}</p>
-                {item.button}
+                {item.link}
             </div>
         )
     })
@@ -65,11 +65,14 @@ export  function generateDecorativeCircles(count: number, filledCirclesCount: nu
   
 
 
-export function doMapForSalesCards(productsArr: CardSaleProps[]) {
-    return productsArr.map((item: CardSaleProps) => {
+export function doMapForCatalogCards(productsArr: CoffeeCatalogCardProps[]) {    
+    return productsArr.map((item: CoffeeCatalogCardProps) => {
+      const oldPriceClass = item.discount ? 'catalog__card-old-price' : '';
         return (
-            <div className="sales__card-item" key={item.id}>
-              <h5 className='catalog__card-sale'>Скидки</h5> 
+              <div className="catalog__card-item" key={item.id}>
+                  {item.discount && (
+                    <h5 className="catalog__card-sale">Скидки</h5>
+                  )}
                 <div className="catalog__card-img-container">
                 <Image src={item.img} alt={item.name} className="catalog__card-img" width={200} height={200}></Image>
                 </div>
@@ -77,14 +80,16 @@ export function doMapForSalesCards(productsArr: CardSaleProps[]) {
                 <span className='catalog__card-roast'>{generateDecorativeElements(item.roast, DECORATIVE_IMG_URL)}</span>
                 <div className='catalog__card-sour'>
                   <p className="catalog__card-taste">Кислинка</p>
-                  <span>{generateDecorativeCircles(4, item.sour, 'circle')}</span>
+                  <span className="catalog__card-circles">{generateDecorativeCircles(4, item.sour, 'circle')}</span>
                 </div>
                 <div className='catalog__card-bitter'>
                 <p className="catalog__card-taste">Горчинка</p>
-                <span>{generateDecorativeCircles(3, item.bitter, 'circle')}</span>
+                <span className="catalog__card-circles">{generateDecorativeCircles(3, item.bitter, 'circle')}</span>
                 </div>
-                <p className="catalog__card-price">{item.price} BYN</p>
-                <p className="catalog__card-discount">{item.new} BYN</p>
+                <p className={`catalog__card-price ${oldPriceClass}`}>{item.price} BYN</p>
+                {item.discount && (
+                  <p className="catalog__card-discount">{item.new} BYN</p>
+                )}
                 {item.button}
             </div>
         )

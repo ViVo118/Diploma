@@ -56,3 +56,23 @@ h1{
 h2{
   font-size: 50px;
 }
+.second__line{
+  display: block;
+}
+
+.link{
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  border: none;
+  cursor: pointer;
+  color: #FFF;
+  background-color: #F9B300;
+  border-radius: 5px;
+  font-family: Gilroy__Black;
+  transition: ease-in-out 0.2s;
+}
+
+.link:hover{
+  background-color: #E2A300;
+}

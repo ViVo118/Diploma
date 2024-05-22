@@ -1,0 +1,16 @@
+.catalog{
+    background-color: #F9B300;
+}
+.catalog__title{
+    color: #FFF;
+    text-align: center;
+}
+.catalog__text{
+    margin-bottom: 30px;
+}
+.catalog__container{
+    height: 200px;
+}
+.catalog__product{
+    height: 800px;
+}

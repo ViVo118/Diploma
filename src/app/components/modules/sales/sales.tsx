@@ -2,9 +2,9 @@
 import Container from "../../elements/container/container";
 import { useAppSelector, useAppDispatch } from "@/app/redux/store";
 import { useEffect } from "react";
-import { doMapForSalesCards } from "../../../../../utils/functions";
+import { doMapForCatalogCards } from "../../../../../utils/functions";
 import { fetchCoffeeProducts } from "@/app/redux/thunks/thunks";
-import { CardSaleProps } from "@/app/types/types";
+import { CoffeeCatalogCardProps } from "@/app/types/types";
 import Button from "../../elements/button/button";
 import "./sales.css";
 
@@ -19,7 +19,7 @@ const Sales = () => {
   }, [dispatch])
 
   const discountedCoffeeProducts = coffeeProducts?.filter(product => product.discount === true).slice(0, 3);
-  const transformedProducts: CardSaleProps[] = discountedCoffeeProducts.map(product => ({
+  const transformedProducts: CoffeeCatalogCardProps[] = discountedCoffeeProducts.map(product => ({
     ...product,
     button: <Button className="catalog__card-btn">В корзину</Button>}))
 
@@ -38,7 +38,7 @@ const Sales = () => {
           {error && <div>{error.message}</div>}
           {coffeeProducts && (
             <div className='sales__products'>
-              {doMapForSalesCards(transformedProducts)}
+              {doMapForCatalogCards(transformedProducts)}
             </div>
           )}
         </div>

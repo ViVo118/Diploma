@@ -2,7 +2,8 @@ import Container from '../../elements/container/container';
 import Image from 'next/image';
 import List from '../../elements/list/list';
 import './advantages.css';
-import Button from '../../elements/button/button';
+import Link from 'next/link';
+
 
 const Advantages = () => {
     return(
@@ -24,7 +25,7 @@ const Advantages = () => {
                             <List></List>
                         </div>
                     </div>
-                    <Button className="advantages__btn">Перейти в каталог</Button>
+                    <Link href={'/catalog/main'} className="link advantages__link">Перейти в каталог</Link>
                 </Container>
             </section>
 

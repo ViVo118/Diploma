@@ -26,10 +26,10 @@ export type ProductCardItem = {
     id: number;
     img: React.ReactNode;
     title: string;
-    button: React.ReactNode;
+    link: React.ReactNode;
 };
 
-export type CardSaleProps = {
+export type CoffeeCatalogCardProps = {
     id: string;
     title: string;
     name: string;

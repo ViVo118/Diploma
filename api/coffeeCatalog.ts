@@ -1,8 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import { CoffeProduct } from "@/app/interfaces/interfaces";
 
-const error = 'Что-то пошло не так'
-
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 const COFFEE_API = BASE_URL + '/coffee';
 
@@ -21,7 +19,7 @@ async fetchCoffeeProducts(): Promise<CoffeProduct[]> {
   try {
     const response = await this.api.get(COFFEE_API);
     if (response.status !== httpCode.OK) {
-        throw new Error(`Failed to fetch coffee products: ${response.status}`);
+        throw new Error(`Ошибка при получении данных: ${response.status}`);
     }
     return response.data.data;
 } catch (error) {

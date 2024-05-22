@@ -1,0 +1,7 @@
+.catalog__products__coffee {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 75px;
+}

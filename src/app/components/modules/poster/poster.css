@@ -16,10 +16,8 @@
 .poster__text + .poster__text{
     margin-bottom: 90px;
 }
-.poster__btn{
+.poster__link{
     font-size: 30px;
     padding: 20px 50px;
 }
-.second__line{
-    display: block;
-}
+
