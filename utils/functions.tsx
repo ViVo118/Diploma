@@ -62,10 +62,24 @@ export  function generateDecorativeCircles(count: number, filledCirclesCount: nu
     }
     return circles;
   }
-  
 
 
-export function doMapForCatalogCards(productsArr: CoffeeCatalogCardProps[]) {    
+
+
+
+  interface Filters {
+    roast: string;
+    bitterness: string;
+    sourness: string;
+    country: string;
+    coffeeType: string;
+    discount: boolean;
+  }
+
+
+
+
+  export function doMapForCatalogCards(productsArr: CoffeeCatalogCardProps[]) {    
     return productsArr.map((item: CoffeeCatalogCardProps) => {
       const oldPriceClass = item.discount ? 'catalog__card-old-price' : '';
         return (

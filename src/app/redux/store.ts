@@ -1,10 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { cartSlice } from './cart/slice'
 import { coffeeCatalogSlice } from './coffeeCatalog/slice'
 import { useDispatch, useSelector } from 'react-redux'
 
+
 export const store = configureStore({
     reducer: {
-        [coffeeCatalogSlice.name]: coffeeCatalogSlice.reducer
+        [coffeeCatalogSlice.name]: coffeeCatalogSlice.reducer,
+        [cartSlice.name]: cartSlice.reducer
     }
 })
 

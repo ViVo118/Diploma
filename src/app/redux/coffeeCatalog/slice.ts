@@ -4,12 +4,14 @@ import { CoffeProduct } from "@/app/interfaces/interfaces"
 interface InitialState {
     loading: boolean,
     coffeeProducts: CoffeProduct[],
+    isAddedToCart: {[productId: string]: boolean},
     error: any
   }
   
   const initialState: InitialState = {
     loading: false,
     coffeeProducts: [],
+    isAddedToCart: {},
     error: null
   }
 

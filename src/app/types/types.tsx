@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import { ReactNode } from 'react';
 
 export type LayoutProps = {
@@ -11,6 +11,7 @@ export type ContainerProps = {
 export type ButtonProps = {
     children: string;
     className: string;
+    onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 export type ListItem = {
     id: number;
@@ -44,5 +45,6 @@ export type CoffeeCatalogCardProps = {
     discount: boolean;
     new: number;
     img: string;
-    button: React.ReactNode;
+    button?: React.ReactNode;
+    isAddedToCart?: boolean;
 };

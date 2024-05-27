@@ -5,7 +5,7 @@ import CatalogProductsCoffee from '@/app/components/modules/catalogProducts/cata
 import { Provider } from 'react-redux'
 import { store } from '@/app/redux/store'
 import './coffee.css'
-import './main.css'
+import '../pages.css'
 import '@/app/globalStyles/globals.css'
 const CoffeeCatalog = () => {
     return (

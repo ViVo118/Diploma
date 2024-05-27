@@ -1,5 +1,6 @@
 .catalog{
-    background-color: #F9B300;
+    margin-bottom: 20px;
+    padding: 15px;
 }
 .catalog__title{
     color: #FFF;
@@ -7,10 +8,10 @@
 }
 .catalog__text{
     margin-bottom: 30px;
-}
-.catalog__container{
-    height: 200px;
+    background-color: #F9B300;
+    border-radius: 50px;
 }
 .catalog__product{
+    margin-bottom: 30px;
     height: 800px;
 }

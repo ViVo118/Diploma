@@ -5,7 +5,7 @@ import Sales from "@/app/components/modules/sales/sales"
 import { Provider } from "react-redux"
 import { store } from "@/app/redux/store"
 import '@/app/globalStyles/globals.css'
-import './main.css'
+import '../pages.css'
 
 
 const GeneralCatalog = () => {

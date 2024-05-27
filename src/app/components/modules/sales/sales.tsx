@@ -5,9 +5,8 @@ import { useEffect } from "react";
 import { doMapForCatalogCards } from "../../../../../utils/functions";
 import { fetchCoffeeProducts } from "@/app/redux/thunks/thunks";
 import { CoffeeCatalogCardProps } from "@/app/types/types";
-import Button from "../../elements/button/button";
+import AddToCartButton from "../../elements/button/addToCartButton";
 import "./sales.css";
-
 
 const Sales = () => {
 
@@ -21,7 +20,7 @@ const Sales = () => {
   const discountedCoffeeProducts = coffeeProducts?.filter(product => product.discount === true).slice(0, 3);
   const transformedProducts: CoffeeCatalogCardProps[] = discountedCoffeeProducts.map(product => ({
     ...product,
-    button: <Button className="catalog__card-btn">В корзину</Button>}))
+    button: <AddToCartButton className="catalog__card-btn" product={product}></AddToCartButton>}))
 
   return (
     <section className="sales">
