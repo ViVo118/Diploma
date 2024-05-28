@@ -14,8 +14,8 @@ const Header = () => {
                         <Image src="/img/logo.png" width={260} height={116} alt="Millor" />
                     </Link>
                 </div>
-                <Navbar></Navbar>
-                <NavIcons></NavIcons>
+                <Navbar/>
+                <NavIcons/>
             </Container>
         </header>
     )

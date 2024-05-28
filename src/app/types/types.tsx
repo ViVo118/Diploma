@@ -1,50 +1,5 @@
-import React, { MouseEventHandler } from "react";
-import { ReactNode } from 'react';
-
-export type LayoutProps = {
-    children: ReactNode;
-}
-export type ContainerProps = {
-    children: ReactNode;
-    className: string;
-}
-export type ButtonProps = {
-    children: string;
-    className: string;
-    onClick?: MouseEventHandler<HTMLButtonElement>;
-}
-export type ListItem = {
-    id: number;
-    title: string;
-    text: string;
-}
 export type NavigationItem = {
     id: number;
     title: string | React.ReactNode;
     path: string;
-};
-export type ProductCardItem = {
-    id: number;
-    img: React.ReactNode;
-    title: string;
-    link: React.ReactNode;
-};
-
-export type CoffeeCatalogCardProps = {
-    id: string;
-    title: string;
-    name: string;
-    description: string;
-    country: string;
-    sour: number;
-    bitter: number;
-    type: string;
-    roast: number;
-    weight: number;
-    price: number;
-    discount: boolean;
-    new: number;
-    img: string;
-    button?: React.ReactNode;
-    isAddedToCart?: boolean;
 };

@@ -4,7 +4,7 @@ import { useAppSelector, useAppDispatch } from "@/app/redux/store";
 import { useEffect } from "react";
 import { doMapForCatalogCards } from "../../../../../utils/functions";
 import { fetchCoffeeProducts } from "@/app/redux/thunks/thunks";
-import { CoffeeCatalogCardProps } from "@/app/types/types";
+import { CoffeeCatalogCardProps } from "@/app/interfaces/interfaces";
 import AddToCartButton from "../../elements/button/addToCartButton";
 import "./sales.css";
 

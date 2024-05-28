@@ -1,7 +1,7 @@
 import { doMapForNavList } from "../../../../../utils/functions";
 import { navigationIconsProps } from "@/app/constants/componentsConsts/componentsConsts";
+import CartIcon from "../../modules/cart/cartIcon";
 import './navbar.css';
-import CartIcon from "../cart/cartIcon";
 
     const NavIcons = () => {
         return(

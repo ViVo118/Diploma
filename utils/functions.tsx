@@ -1,7 +1,9 @@
 import Link from "next/link"
-import { NavigationItem, ProductCardItem, ListItem, CoffeeCatalogCardProps } from "@/app/types/types";
+import {  NavigationItem } from "@/app/types/types";
 import Image from "next/image";
 import { DECORATIVE_IMG_URL } from "@/app/constants/componentsConsts/componentsConsts";
+import { ProductCardItem, CoffeeCatalogCardProps, ListItem } from "@/app/interfaces/interfaces";
+
 
 export function doMapForNavList (arrName: NavigationItem[]) {
     return (
@@ -62,24 +64,7 @@ export  function generateDecorativeCircles(count: number, filledCirclesCount: nu
     }
     return circles;
   }
-
-
-
-
-
-  interface Filters {
-    roast: string;
-    bitterness: string;
-    sourness: string;
-    country: string;
-    coffeeType: string;
-    discount: boolean;
-  }
-
-
-
-
-  export function doMapForCatalogCards(productsArr: CoffeeCatalogCardProps[]) {    
+  export function doMapForCatalogCards(productsArr: CoffeeCatalogCardProps[],  handleCardClick: (id: string) => void) {    
     return productsArr.map((item: CoffeeCatalogCardProps) => {
       const oldPriceClass = item.discount ? 'catalog__card-old-price' : '';
         return (
@@ -87,7 +72,7 @@ export  function generateDecorativeCircles(count: number, filledCirclesCount: nu
                   {item.discount && (
                     <h5 className="catalog__card-sale">Скидки</h5>
                   )}
-                <div className="catalog__card-img-container">
+                <div className="catalog__card-img-container" onClick={() => handleCardClick(item.id)}>
                 <Image src={item.img} alt={item.name} className="catalog__card-img" width={200} height={200}></Image>
                 </div>
                 <p className="catalog__card-title">{item.name}</p>
@@ -108,4 +93,18 @@ export  function generateDecorativeCircles(count: number, filledCirclesCount: nu
             </div>
         )
     })
+}
+
+export const validatePhone = (value: string) => {
+  const regex = /^(\+)[0-9]{12}$/;
+  return regex.test(value) || 'Введите номер телефона в формате +37529ХХХХХХХ';
+}
+export const validateForm = (value: string) => {
+  const regex = /[а-яА-Я0-9\s.,'-]$/;
+  return regex.test(value) || 'Введено недопустимое значение';
+};
+
+export const validateEmail = (value: string) => {
+  const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  return regex.test(value) || 'Введен неверный email адрес';
 }

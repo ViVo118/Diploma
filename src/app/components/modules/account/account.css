@@ -1,0 +1,11 @@
+.account__title{
+    margin-bottom: 20px;
+}
+
+.account__links{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    width: 20%;
+}

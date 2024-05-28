@@ -1,5 +1,7 @@
+import { ButtonProps } from '@/app/interfaces/interfaces';
 import './button.css'
-import { ButtonProps } from '@/app/types/types';
+
+
 const Button: React.FC<ButtonProps> = ({className, children, onClick}) => {
     return(
         <button className={`btn ${className}` } onClick={onClick}>

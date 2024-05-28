@@ -2,9 +2,6 @@ import Container from "../../elements/container/container";
 import ProductCards from "../../elements/product/productCards";
 import './products.css';
 
-
-
-
 const Products = () => {
     return (
         <section className="products">

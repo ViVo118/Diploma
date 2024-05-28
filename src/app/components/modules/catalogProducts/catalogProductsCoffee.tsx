@@ -3,14 +3,18 @@ import { useAppSelector, useAppDispatch } from "@/app/redux/store";
 import { useEffect, useState } from "react";
 import { doMapForCatalogCards } from "../../../../../utils/functions";
 import { fetchCoffeeProducts } from "@/app/redux/thunks/thunks";
-import { CoffeeCatalogCardProps} from "@/app/types/types";
+import { CoffeeCatalogCardProps} from "@/app/interfaces/interfaces";
+import { ITEMS_PER_PAGE, initialFilters, sortProducts } from "@/app/constants/componentsConsts/componentsConsts";
+import { Filters } from "@/app/interfaces/interfaces";
 import AddToCartButton from "../../elements/button/addToCartButton";
 import PaginationComponent from "../../pagination/pagination";
-import { ITEMS_PER_PAGE } from "@/app/constants/componentsConsts/componentsConsts";
 import Filter from "../../filter/filter";
 import Sort from "../../sort/sort";
 import './catalogProducts.css'
 import '../sales/sales.css'
+import { useRouter } from "next/router";
+
+
 
 const CatalogProductsCoffee = () => {
 
@@ -20,15 +24,17 @@ const CatalogProductsCoffee = () => {
   useEffect(() =>{
     dispatch(fetchCoffeeProducts())
   }, [dispatch])
+
+  const router = useRouter();
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [filters, setFilters] = useState<Filters>(initialFilters);
   const [filtersApplied, setFiltersApplied] = useState(false);
+  const [sortOrder, setSortOrder] = useState<string>('');
+  
   const transformedProducts: CoffeeCatalogCardProps[] = coffeeProducts.map(product => ({
     ...product,
     button: <AddToCartButton className="catalog__card-btn" product={product}></AddToCartButton>}))
-
-
-    const [currentPage, setCurrentPage] = useState(1);
-    const [sortOrder, setSortOrder] = useState<string>('');
-
 
     const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
       setCurrentPage(value);
@@ -37,28 +43,7 @@ const CatalogProductsCoffee = () => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
 
 
-    interface Filters {
-      roast: string;
-      bitterness: string;
-      sourness: string;
-      country: string;
-      coffeeType: string;
-      discount: boolean;
-    }
-    
-    const initialFilters: Filters = {
-      roast: '',
-      bitterness: '',
-      sourness: '',
-      country: '',
-      coffeeType: '',
-      discount: false,
-    };
-    
-      const [filters, setFilters] = useState<Filters>(initialFilters);
-    
-
-      const handleFilterChange = (newFilters: Filters) => {
+    const handleFilterChange = (newFilters: Filters) => {
         setFilters(newFilters);
         setFiltersApplied(
           newFilters.roast !== '' ||
@@ -82,44 +67,33 @@ const CatalogProductsCoffee = () => {
   
       return matchesRoast && matchesBitterness && matchesSourness && matchesCountry && matchesCoffeeType && matchesDiscount;
     });
-    // const paginatedProducts = filteredProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+    const sortedProducts = sortProducts(filteredProducts, sortOrder);
+    const paginatedProducts = sortedProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);    
 
     const handleSortChange = (order: string) => {
       setSortOrder(order);
     };
-    const sortProducts = (products: CoffeeCatalogCardProps[], sortOrder: string): CoffeeCatalogCardProps[] => {
-      return products.sort((a, b) => {
-        const priceA = a.discount ? a.new : a.price;
-        const priceB = b.discount ? b.new : b.price;
+  
+    const handleCardClick = (id: string) => {
+      router.push(`/product/${id}`);
+    };
     
-        if (sortOrder === 'asc') {
-          return priceA - priceB;
-        } else if (sortOrder === 'desc') {
-          return priceB - priceA;
-        }
-        return 0;
-      });
-    };    
-    const sortedProducts = sortProducts(filteredProducts, sortOrder);
-    const paginatedProducts = sortedProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
   return (
     <div className="coffee__products">
       <Filter onFilterChange={handleFilterChange}/>
       <Sort onSortChange={handleSortChange} />
           {loading && <div>Loading...</div>}
           {error && <div>{error.message}</div>}
-          {/* {coffeeProducts && ( */}
           {sortedProducts.length > 0 ? (
         <div className='catalog__products__coffee'>
-          {doMapForCatalogCards(filtersApplied ? sortedProducts : paginatedProducts)}
+          {doMapForCatalogCards(filtersApplied ? sortedProducts : paginatedProducts, handleCardClick)}
         </div>
       ) : (
-        <div>По вашим фильтрам ничего не найдено</div>
+        <p>Ничего не найдено</p>
             )}
             {!filtersApplied && (
             <PaginationComponent 
-            // totalItems={coffeeProducts.length}
             totalItems={sortedProducts.length} 
             itemsPerPage={ITEMS_PER_PAGE} 
             currentPage={currentPage} 

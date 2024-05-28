@@ -1,6 +1,5 @@
 import Container from '@/app/components/elements/container/container'
-import LayoutComponent from '@/app/components/modules/layout/layout'
-import CartProductCard from '@/app/components/elements/cart/cartProductCard'
+import CartProductCard from '@/app/components/modules/cart/cartProductCard'
 import { useAppDispatch, useAppSelector } from '@/app/redux/store'
 import { removeItem, updateQuantity, clearCart } from '@/app/redux/cart/slice'
 import '@/app/globalStyles/globals.css'
@@ -26,7 +25,6 @@ const Cart: React.FC = () => {
   };
 
   return (
-    <LayoutComponent>
       <section className="cart">
         <Container className="cart__container">
           <div className='cart__content'>
@@ -44,9 +42,7 @@ const Cart: React.FC = () => {
           </div>
         </Container>
       </section>
-    </LayoutComponent>
   );
 };
-
 
   export default Cart;

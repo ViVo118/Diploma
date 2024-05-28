@@ -1,9 +1,8 @@
 import Container from '../../elements/container/container';
 import Image from 'next/image';
 import List from '../../elements/list/list';
-import './advantages.css';
 import Link from 'next/link';
-
+import './advantages.css';
 
 const Advantages = () => {
     return(

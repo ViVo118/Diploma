@@ -1,6 +1,6 @@
 import { CartProductCardProps }from "@/app/interfaces/interfaces";
 import Image from "next/image";
-import Button from "../button/button";
+import Button from "../../elements/button/button";
 import './cart.css';
 
 const CartProductCard: React.FC<CartProductCardProps> = ({ cartItems, removeFromCart, updateQuantity, clearCart }) => {
@@ -15,7 +15,7 @@ const CartProductCard: React.FC<CartProductCardProps> = ({ cartItems, removeFrom
             <Image className="cart__item-img" src={item.img} alt={item.name} width={100} height={100}/>
             <div>
               <p>{item.name}</p>
-              <p>{item.weight} g</p>
+              <p>{item.weight} гр.</p>
             </div>
           </div>
           <div className="cart__item-price">

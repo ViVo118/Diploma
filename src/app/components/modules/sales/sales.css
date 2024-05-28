@@ -70,6 +70,7 @@
   }
   .catalog__card-img-container {
     grid-area: 2 / 1 / 6 / 2;
+    cursor: pointer;
   }
   .catalog__card-img {
     border-radius: 20px;

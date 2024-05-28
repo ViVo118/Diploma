@@ -1,16 +1,8 @@
+import { Filters } from '@/app/interfaces/interfaces';
 import React, { useState } from 'react';
 
 interface FilterProps {
   onFilterChange: (filters: Filters) => void;
-}
-
-interface Filters {
-  roast: string;
-  bitterness: string;
-  sourness: string;
-  country: string;
-  coffeeType: string;
-  discount: boolean;
 }
 
 const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
@@ -35,9 +27,15 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
 
   return (
     <div className="filter">
-      <h2>Фильтр</h2>
-      <label>Зёрна кофе (1-5):</label>
-      <input type="number" min="1" max="5" value={roast} onChange={(e) => setRoast(e.target.value)} />
+      <label>Степень обжарки:</label>
+      <select value={roast} onChange={(e) => setRoast(e.target.value)}>
+        <option value="">Любая</option>
+        <option value="1">Очень слабая</option>
+        <option value="2">Слабая</option>
+        <option value="3">Средняя</option>
+        <option value="4">Сильная</option>
+        <option value="5">Очень сильная</option>
+      </select>
       
       <label>Горчинка:</label>
       <select value={bitterness} onChange={(e) => setBitterness(e.target.value)}>
