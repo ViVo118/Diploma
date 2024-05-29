@@ -10,11 +10,9 @@ import AddToCartButton from "../../elements/button/addToCartButton";
 import PaginationComponent from "../../pagination/pagination";
 import Filter from "../../filter/filter";
 import Sort from "../../sort/sort";
+import { useRouter } from "next/router";
 import './catalogProducts.css'
 import '../sales/sales.css'
-import { useRouter } from "next/router";
-
-
 
 const CatalogProductsCoffee = () => {
 

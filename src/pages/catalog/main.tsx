@@ -6,6 +6,7 @@ import { Provider } from "react-redux"
 import { store } from "@/app/redux/store"
 import '@/app/globalStyles/globals.css'
 import '../pages.css'
+import '@/app/globalStyles/media.css'
 
 
 const GeneralCatalog = () => {

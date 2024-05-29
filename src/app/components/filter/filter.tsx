@@ -1,5 +1,7 @@
 import { Filters } from '@/app/interfaces/interfaces';
 import React, { useState } from 'react';
+import Button from '../elements/button/button';
+import './filter.css';
 
 interface FilterProps {
   onFilterChange: (filters: Filters) => void;
@@ -27,7 +29,7 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
 
   return (
     <div className="filter">
-      <label>Степень обжарки:</label>
+      <p className= 'filter__option'>Степень обжарки:</p>
       <select value={roast} onChange={(e) => setRoast(e.target.value)}>
         <option value="">Любая</option>
         <option value="1">Очень слабая</option>
@@ -37,7 +39,7 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
         <option value="5">Очень сильная</option>
       </select>
       
-      <label>Горчинка:</label>
+      <p className= 'filter__option'>Горчинка:</p>
       <select value={bitterness} onChange={(e) => setBitterness(e.target.value)}>
         <option value="">Любая</option>
         <option value="1">Слабая</option>
@@ -45,7 +47,7 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
         <option value="3">Сильная</option>
       </select>
 
-      <label>Кислинка:</label>
+      <p className= 'filter__option'>Кислинка:</p>
       <select value={sourness} onChange={(e) => setSourness(e.target.value)}>
         <option value="">Любая</option>
         <option value="1">Очень слабая</option>
@@ -54,7 +56,7 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
         <option value="4">Сильная</option>
       </select>
 
-      <label>Страна происхождения:</label>
+      <p className= 'filter__option'>Страна происхождения:</p>
       <select value={country} onChange={(e) => setCountry(e.target.value)}>
         <option value="">Любая</option>
         <option value="Колумбия">Колумбия</option>
@@ -69,7 +71,7 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
         <option value="Гондурас">Гондурас</option>
       </select>
 
-      <label>Вид кофейного дерева:</label>
+      <p className= 'filter__option'>Вид кофейного дерева:</p>
       <select value={coffeeType} onChange={(e) => setCoffeeType(e.target.value)}>
         <option value="">Любой</option>
         <option value="Арабика">Арабика</option>
@@ -77,12 +79,12 @@ const Filter: React.FC<FilterProps> = ({ onFilterChange }) => {
         <option value="Робуста + Арабика">Арабика + Робуста</option>
       </select>
 
-      <label>
-        <input type="checkbox" checked={discount} onChange={(e) => setDiscount(e.target.checked)} />
-        Скидка
-      </label>
+      <div className='filter__discount'>
+        <label className='filter__discount-text'>Скидка</label>
+        <input className='filter__discount-checkbox' type="checkbox" checked={discount} onChange={(e) => setDiscount(e.target.checked)} />
+      </div>
 
-      <button onClick={handleFilterChange}>Применить фильтр</button>
+      <Button className='filter__btn' onClick={handleFilterChange}>Применить фильтр</Button>
     </div>
   );
 };

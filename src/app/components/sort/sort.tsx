@@ -10,7 +10,8 @@ const Sort: React.FC<SortProps> = ({ onSortChange }) => {
   };
 
   return (
-    <div className="sort">
+    <div className="sort"
+    style={{marginBottom:'20px'}}>
       <label htmlFor="sort">Сортировать по цене: </label>
       <select id="sort" onChange={handleSortChange}>
         <option value="">Без сортировки</option>

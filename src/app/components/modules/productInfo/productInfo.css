@@ -1,0 +1,25 @@
+.product-info{
+    margin-bottom: 20px;
+}
+.product-info__title{
+    margin-bottom: 35px;
+}
+
+.product-info__image{
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.product-info__description{
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.product-info p + p{
+    margin-bottom: 15px;
+}
+
+.prouct-info__btn{
+    padding: 15px;
+    font-size: 20px;
+}

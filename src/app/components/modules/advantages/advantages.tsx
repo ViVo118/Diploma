@@ -14,8 +14,8 @@ const Advantages = () => {
             <section className="advantages">
                 <Container className="advantages__container">
                     <div className="advantages__content">
-                        <div className='advantages__image'>
-                            <Image src='/img/advantage.png' width={750} height={600} alt='Кофе'/>
+                        <div className='advantages__image-container'>
+                            <Image src='/img/advantage.png' width={750} height={600} className='advantages__image' alt='Кофе'/>
                         </div>
                         <div className='advantages__text'>
                             <h2 className="advantages__title">

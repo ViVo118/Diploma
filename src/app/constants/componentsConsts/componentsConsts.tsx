@@ -21,7 +21,7 @@ export const productProps: ProductCardItem[] = [
     {
     id: 1, 
     title: 'Свежеобжаренный кофе', 
-    img: <Image className="product__img" src={coffeIcon} alt="Кофе" width={341} height={258}/>, 
+    img: <Image className="product__img" layout="responsive" src={coffeIcon} alt="Кофе" width={341} height={258}/>, 
     link: <Link href={'/catalog/coffee'} className="link product__link">
             Купить
           </Link>
@@ -32,7 +32,7 @@ export const productProps: ProductCardItem[] = [
     // img: <Image className="product__img" src={teaIcon} alt="Чай" width={215} height={258}/>, 
     // link: <Link href={'/pages/catalog/page.tsx'} className="link product__link">
     //             Купить
-    //         </Link>
+    //       </Link>
     // }
 ]
 

@@ -20,6 +20,7 @@
 .product__img-container{
     height: 270px;
     margin-bottom: 45px;
+    width: 100%;
 }
     
 .product__card-title{
