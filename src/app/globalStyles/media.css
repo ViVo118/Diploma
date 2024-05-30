@@ -6,6 +6,7 @@
         top: 100%;
 }
 }
+
 @media (max-width: 1475px) {
     .header::after{
         display: none;
@@ -17,6 +18,7 @@
         padding: 15px 30px;
     }
 }
+
 @media(max-width: 1390px) {
     .advantages__content {
         gap: 15px;
@@ -31,9 +33,16 @@
     left: 70%;
 }
 }
+
 @media (max-width: 1235px) {
     .header{
         margin-bottom: 30px;
+    }
+    .burger-menu {
+        display: block;
+    }
+    .header__nav{
+        display: none;
     }
     .poster {
         margin-bottom: 100px;
@@ -87,6 +96,9 @@
     .list__title {
         margin-bottom: 15px;
     }
+    .cart-icon{
+        display: none;
+    }
 }
 
 @media (max-width: 1120px) {
@@ -134,6 +146,7 @@
         margin-bottom: 60px;
     }
 }
+
 @media (max-width: 1024px){
     .advantages__title {
         font-size: 35px;
@@ -158,6 +171,7 @@
         margin-bottom: 30px;
     }
 }
+
 @media (max-width: 965px){
     .product__link {
         padding: 10px 60px;
@@ -190,6 +204,7 @@
         margin-bottom: 30px;
     }
 }
+
 @media (max-width: 850px){
     .advantages__link {
         left: 60%;
@@ -200,16 +215,18 @@
     .product__img-container {
         height: 250px;
     }
+    .account__link-catalog,
+    .account__link{
+        font-size: 20px;
+    }
 }
+
 @media (max-width: 680px){
     .header {
         margin-bottom: 10px;
     }
     h1 {
         font-size: 40px;
-    }
-    .nav__list a{
-        font-size: 15px;
     }
     .poster__text {
         margin-bottom: 24px;
@@ -241,8 +258,27 @@
         width: 405px;
         height: 340px;
     }
+    .account__link-catalog,
+    .account__link{
+        font-size: 17px;
+    }
+    .cart__products{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .cart__item {
+        justify-content: space-around;
+        align-items: start;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
+
 @media (max-width: 575px){
+    h1{
+        text-align: center;
+    }
     .catalog__card-old-price, 
     .catalog__card-price{
         align-self: center;
@@ -259,5 +295,98 @@
     .advantages__link {
         top: 97%;
         left: 45%;
+    }
+    .nav__list a {
+        font-size: 17px;
+    }
+    .footer__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .account__link-catalog,
+    .account__link{
+        padding: 15px;
+    }
+}
+
+@media (max-width: 490px){
+    .product__card-title {
+        font-size: 20px;
+    }
+    .product__link {
+        font-size: 16px;
+    }
+    .products {
+        margin-bottom: 40px;
+    }
+    .sales__title {
+        margin-bottom: 20px;
+    }
+    .sales__text {
+        font-size: 19px;
+        margin-bottom: 50px;
+    }
+    .advantages__link{
+        display: none;
+    }
+    .advantages__image {
+        width: 333px;
+        height: 290px;
+    }
+    .account__link-catalog,
+    .account__link{
+        width: 100px;
+        padding: 25px;
+        font-size: 15px;
+    }
+    .catalog__title{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 425px){
+    .product__img-container {
+        height: 130px;
+    }
+    .product__card-title {
+        font-size: 18px;
+    }
+    .product__link {
+        padding: 8px 45px;
+        font-size: 13px;
+    }
+    .products__title {
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 370px){
+    h1 {
+        font-size: 32px;
+    }
+    .poster__text {
+        margin-bottom: 18px;
+        font-size: 17px;
+    }
+    .poster__text + .poster__text {
+        margin-bottom: 25px;
+    }
+    .product__card__item {
+        width: 70%;
+    }
+    h2{
+        font-size: 28px;
+        text-align: center;
+    }
+    .sales__text{
+        text-align: center;
+    }
+    .advantages__image {
+        width: 300px;
+        height: 260px;
+    }
+    .catalog__title {
+        font-size: 25px;
     }
 }

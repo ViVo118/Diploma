@@ -6,3 +6,13 @@
 .nav__list{
     position: relative;
 }
+
+.nav{
+    margin-right: 50px;
+    margin-bottom: 10px;
+}
+
+.burger-menu .nav__list{
+    flex-direction: column;
+    align-items: center;
+}

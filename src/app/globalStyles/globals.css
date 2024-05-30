@@ -61,9 +61,6 @@ h2{
 }
 
 .link{
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   border: none;
   cursor: pointer;
   color: #FFF;
@@ -75,4 +72,8 @@ h2{
 
 .link:hover{
   background-color: #E2A300;
+}
+
+section:not(.products, .poster, .sales, .advantages, .cart){
+  min-height: 100vh;
 }

@@ -4,7 +4,10 @@ import { CoffeProduct } from '../../../interfaces/interfaces';
 import Image from 'next/image';
 import AddToCartButton from '@/app/components/elements/button/addToCartButton';
 import Container from '../../elements/container/container';
+import Link from 'next/link';
 import './productInfo.css';
+import '@/app/globalStyles/media.css';
+
 
 const ProductInfo = () => {
   const router = useRouter();
@@ -14,7 +17,14 @@ const ProductInfo = () => {
   );
 
   if (!product) {
-    return <div>Товар не найден</div>;
+    return (
+      <section>
+        <Container className="product-info__container">
+          <p className='product-info__not-found'>Товар не найден</p>
+          <Link href={'/catalog/main'} className='link product-info__link'>Перейти в каталог</Link>
+        </Container>
+      </section>
+    );
   }
 
   const { img, name, description, country, weight, type, discount, price, new: newPrice } = product;

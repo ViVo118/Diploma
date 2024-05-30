@@ -1,6 +1,7 @@
 import Container from "../../elements/container/container";
 import ProductCards from "../../elements/product/productCards";
 import './products.css';
+// import '@/app/globalStyles/media.css'
 
 const Products = () => {
     return (

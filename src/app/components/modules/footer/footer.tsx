@@ -13,7 +13,9 @@ const Footer = () => {
                         <Image src="/img/logo.png" width={260} height={116} alt="Millor" />
                     </Link>
                 </div>
-                <Navbar></Navbar>
+                <div className="footer__nav">
+                <Navbar/>
+                </div>
             </Container>
         </footer>
     )

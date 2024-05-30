@@ -4,6 +4,7 @@ import Navbar from "../../elements/navbar/navbar";
 import Image from "next/image";
 import NavIcons from "../../elements/navbar/navicons";
 import './header.css';
+import BurgerMenu from "../../elements/burgerMenu/burgerMenu";
 
 const Header = () => {
     return(
@@ -14,8 +15,11 @@ const Header = () => {
                         <Image src="/img/logo.png" width={260} height={116} alt="Millor" />
                     </Link>
                 </div>
-                <Navbar/>
-                <NavIcons/>
+                <div className="header__nav">
+                    <Navbar/>
+                    <NavIcons/>
+                </div>
+                <BurgerMenu/>
             </Container>
         </header>
     )

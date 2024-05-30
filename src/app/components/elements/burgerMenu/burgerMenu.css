@@ -1,0 +1,66 @@
+.burger-menu{
+    width: 35px;
+    height: 23px;
+    display: none;
+}
+.burger-menu label{
+    position: relative;
+    height: 100%;
+    display: block;
+    z-index: 2;
+}
+.checkbox{
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+.line{
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color:  #000;;
+    position: absolute;
+    left: 0;
+    transition: opacity 0.1s ease-in-out, transform 0.5s ease-in;
+}
+
+.line1{
+    top: 0;
+}
+.line2{
+    top: 50%;
+    transform: translateY(-50%)
+}
+.line3{
+    bottom: 0;
+}
+.checkbox:checked ~ label .lines .line2{
+    opacity: 0;
+}
+.checkbox:checked ~ label .lines .line1{ 
+    transform: translateY(240%) rotate(45deg);
+}
+.checkbox:checked ~ label .lines .line3{
+    transform: translateY(-240%)rotate(-45deg);
+}
+.header__toggle-menu{
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    padding-top: 80px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: 3s ease-out;
+    transform: translateX(-100%);
+    opacity: 0; 
+}
+.checkbox:checked ~ .header__toggle-menu{
+    opacity: 1;
+    transform: translateX(0);
+}

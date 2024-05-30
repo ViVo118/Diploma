@@ -4,6 +4,7 @@ import { store } from "@/app/redux/store";
 import Delivery from "@/app/components/modules/delivery/delivery";
 import LayoutComponent from "@/app/components/modules/layout/layout";
 import '../pages.css'
+import '@/app/globalStyles/media.css'
 
 const CartPage = () => {
 

@@ -5,6 +5,7 @@ import CatalogProductsCoffee from '@/app/components/modules/catalogProducts/cata
 import './coffee.css'
 import '../pages.css'
 import '@/app/globalStyles/globals.css'
+import '@/app/globalStyles/media.css'
 const CoffeeCatalog = () => {
     return (
             <LayoutComponent>

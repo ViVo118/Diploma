@@ -18,3 +18,8 @@
     right: 0;
     z-index: -1;
 }
+
+.header__nav{
+  display: flex;
+  justify-content: space-between;
+}

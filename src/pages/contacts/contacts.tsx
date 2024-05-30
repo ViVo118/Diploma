@@ -1,10 +1,10 @@
-import '@/app/globalStyles/globals.css'
-import '../pages.css'
-import './contacts.css'
 import LayoutComponent from '@/app/components/modules/layout/layout'
 import Container from '@/app/components/elements/container/container'
 import Link from 'next/link'
-
+import '@/app/globalStyles/globals.css'
+import '../pages.css'
+import './contacts.css'
+import '@/app/globalStyles/media.css'
 const Contacts = () => {
 
     return (

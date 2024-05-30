@@ -23,3 +23,9 @@
     padding: 15px;
     font-size: 20px;
 }
+.product-info__not-found{
+    margin-bottom: 10px;
+}
+.product-info__link{
+    padding: 10px;
+}

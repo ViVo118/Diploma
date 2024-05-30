@@ -6,9 +6,16 @@ import { doMapForCatalogCards } from "../../../../../utils/functions";
 import { fetchCoffeeProducts } from "@/app/redux/thunks/thunks";
 import { CoffeeCatalogCardProps } from "@/app/interfaces/interfaces";
 import AddToCartButton from "../../elements/button/addToCartButton";
+import { useRouter } from "next/navigation";
 import "./sales.css";
+// import '@/app/globalStyles/media.css'
 
 const Sales = () => {
+
+  const router = useRouter();
+  const handleCardClick = (id: string) => {
+    router.push(`/product/${id}`);
+  };
 
   const {loading, coffeeProducts, error} = useAppSelector((state) => state.coffeeProducts)
 
@@ -17,10 +24,12 @@ const Sales = () => {
     dispatch(fetchCoffeeProducts())
   }, [dispatch])
 
+
   const discountedCoffeeProducts = coffeeProducts?.filter(product => product.discount === true).slice(0, 3);
   const transformedProducts: CoffeeCatalogCardProps[] = discountedCoffeeProducts.map(product => ({
     ...product,
     button: <AddToCartButton className="catalog__card-btn" product={product}></AddToCartButton>}))
+
 
   return (
     <section className="sales">
@@ -37,7 +46,7 @@ const Sales = () => {
           {error && <div>{error.message}</div>}
           {coffeeProducts && (
             <div className='sales__products'>
-              {doMapForCatalogCards(transformedProducts)}
+              {doMapForCatalogCards(transformedProducts, handleCardClick)}
             </div>
           )}
         </div>

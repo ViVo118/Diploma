@@ -4,6 +4,7 @@ import GoogleAuthButton from '../../elements/button/googleAuthButton';
 import { useSession, signOut } from "next-auth/react";
 import './account.css'
 import '@/app/globalStyles/globals.css'
+import '@/app/globalStyles/media.css'
 const Account = () => {
     const session = useSession()
     return (
