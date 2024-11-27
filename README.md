@@ -32,9 +32,11 @@ bun dev
 Для .env: NEXT_PUBLIC_API_URL=https://api.mockfly.dev/mocks/866de2da-e4ef-4271-b192-d9b7a30e73f0 
 
 Для .env.local: GOOGLE_CLIENT_ID='607712273113-i0496bdjj5thn70n1ulm9e7v6nj01ecs.apps.googleusercontent.com'
+
 GOOGLE_SECRET='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'
 
 NEXTAUTH_URL='http://localhost:3000'
+
 NEXTAUTH_SECRET='nextsecretyouwontget'
 
 Откройте сайт через localhost. Убедитесь, что числовой идентификатор порта - 3000. 
