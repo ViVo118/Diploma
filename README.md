@@ -27,7 +27,7 @@ bun dev
 
 Для корректной работы каталога и авторизации через аккаунт Google:
 
-Создайте файлы env. и env.local. Скопируйте туда следуюие строки:
+Создайте файлы env. и env.local. Скопируйте туда строки:
 
 Для .env: NEXT_PUBLIC_API_URL=https://api.mockfly.dev/mocks/866de2da-e4ef-4271-b192-d9b7a30e73f0 
 
